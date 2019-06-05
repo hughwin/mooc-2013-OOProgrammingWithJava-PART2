@@ -23,14 +23,11 @@ public class Airport {
     public void addPlane(Airplane airplane) {
         this.planes.add(airplane);
     }
-    public void addFlight(){
-    
-    }
 
-    public void printPlaneInfo(String search) {
+    public void addFlight(String ID, String departing, String destination) {
         for (Airplane x : this.planes) {
-            if (x.getPlane().equals(search)) {
-                System.out.println(x.getPlane() + " " + x.getCapacity());
+            if (x.getPlane().equals(ID)) {
+                this.flights.add(x.toString() + " (" + departing + "-" + destination + ")");
             }
 
         }
@@ -38,7 +35,22 @@ public class Airport {
 
     public void printPlanes() {
         for (Airplane x : this.planes) {
-            System.out.println(x.getPlane() + " " + x.getCapacity());
+            System.out.println(x.toString());
+        }
+    }
+
+    public void printFlights() {
+        for (String x : this.flights) {
+            System.out.println(x);
+        }
+    }
+
+    public void printPlaneInfo(String ID) {
+        for (Airplane x : this.planes) {
+            if (x.getPlane().equals(ID)) {
+                System.out.println(x.toString());
+            }
+
         }
     }
 

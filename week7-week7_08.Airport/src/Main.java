@@ -12,10 +12,6 @@ public class Main {
         textUserInterface Ui = new textUserInterface(reader, Heathrow);
         Ui.start();
         
-        
-        
-        Airplane a = new Airplane("Boeing 747", 124);
-        System.out.println(a.toString());
-        Airplane b = new Airplane("Boeing 808 Mx", 202);
+    
     }
 }
