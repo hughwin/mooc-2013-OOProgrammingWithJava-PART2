@@ -16,17 +16,17 @@ import java.util.Set;
 public class PersonalMultipleEntryDictionary implements MultipleEntryDictionary {
 
     private HashMap<String, Set<String>> keys;
-    
-    public PersonalMultipleEntryDictionary(){
+
+    public PersonalMultipleEntryDictionary() {
         this.keys = new HashMap<String, Set<String>>();
     }
-    
+
     @Override
     public void add(String word, String entry) {
-        if (!this.keys.containsKey(word)){
+        if (!this.keys.containsKey(word)) {
             this.keys.put(word, new HashSet<String>());
         }
-        
+
         Set<String> finished = this.keys.get(word);
         finished.add(entry);
     }
@@ -34,17 +34,15 @@ public class PersonalMultipleEntryDictionary implements MultipleEntryDictionary 
     @Override
     public Set<String> translate(String word) {
 
-            Set<String> a = this.keys.get(word);
-        
-        
-        return a;
+        return this.keys.get(word);
+
     }
 
     @Override
     public void remove(String word) {
-        if (this.keys.containsKey(word)){
+        if (this.keys.containsKey(word)) {
             this.keys.remove(word);
         }
     }
-    
+
 }
