@@ -2,7 +2,19 @@
 public class Main {
 
     public static void main(String[] args) {
-        Jumper a = new Jumper("Hugh");
-        System.out.println(a.toString());
+        //UI a = new UI();
+        //a.start();
+        
+        Jumper hugh = new Jumper("Hugh");
+        Jumper jeremy = new Jumper("Jeremy");
+        
+       
+        
+        
+        Jumpers jumpers = new Jumpers();
+        
+        jumpers.addJumper(hugh);
+        jumpers.addJumper(jeremy);
+        jumpers.jump();
     }
 }

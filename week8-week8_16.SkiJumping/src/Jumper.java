@@ -31,6 +31,13 @@ public class Jumper {
         this.totalScore += points;
     }
     
+    public void jump(){
+            System.out.println(this.name);
+        jumpLogic logic = new jumpLogic(this);
+            logic.distance();
+            logic.judgesVotes();
+    }
+    
     @Override
     public String toString(){
         return (getName() + "(" + this.totalScore + " points)");

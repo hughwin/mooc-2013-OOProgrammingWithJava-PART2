@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * @author
  * Hugh
  */
-    public class Jumpers implements Comparable<Jumper> {
+    public class Jumpers  {
     
 
     private ArrayList<Jumper> jumpers;
@@ -21,9 +21,14 @@ import java.util.ArrayList;
         this.jumpers = new ArrayList<Jumper>();
     }
     
-    public int compareTo(Jumper jumper){
-        return 1;
-
+    public void addJumper(Jumper j) {
+        this.jumpers.add(j);
+    }
+    
+    public void jump(){
+        for (Jumper x : this.jumpers){
+           x.jump();
+        }
     }
     
     }
