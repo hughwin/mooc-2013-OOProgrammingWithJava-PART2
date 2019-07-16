@@ -1,7 +1,9 @@
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.Random;
+import java.util.stream.IntStream;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -25,6 +27,7 @@ public class jumpLogic {
         int dist = rand.nextInt(60) + 61;
         this.jumper.increaseScore(dist);
         System.out.println("    length: " + dist);
+        this.jumper.trackedDistances(dist);
     }
 
     public void judgesVotes() {
@@ -39,8 +42,16 @@ public class jumpLogic {
         Collections.sort(scores);
         scores.remove(0);
         scores.remove(3);
-        
+        this.jumper.increaseScore(addScores(scores));
     }
 
+    public int addScores(ArrayList<Integer> list) {
+        int sum = 0;
+        for (int i : list) {
+            sum += i;
+        }
+        return sum;
+    }
 
 }
+

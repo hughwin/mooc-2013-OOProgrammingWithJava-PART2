@@ -1,49 +1,57 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+import java.util.ArrayList;
+import java.util.List;
 
-/**
- *
- * @author Hugh
- */
-public class Jumper {
-    
+public class Jumper implements Comparable<Jumper> {
+
     private String name;
-    private int totalScore; 
-    
-    
-    public Jumper(String name){
+    private int points;
+    private List<Integer> jumps;
+
+    public Jumper(String name) {
         this.name = name;
-        this.totalScore = 0;
+        jumps = new ArrayList<Integer>();
     }
-    
-    public String getName(){
-        return this.name;
+
+    public void addJump(int points, int jump) {
+        this.points += points;
+        jumps.add(jump);
     }
-    
-    public int getScore(){
-        return this.totalScore;
+
+    public String getName() {
+        return name;
     }
-    
-    public void increaseScore(int points){
-        this.totalScore += points;
-    }
-    
-    public void jump(){
-            System.out.println(this.name);
-        jumpLogic logic = new jumpLogic(this);
-            logic.distance();
-            logic.judgesVotes();
-    }
-    
+
     @Override
-    public String toString(){
-        return (getName() + "(" + this.totalScore + " points)");
+    public int compareTo(Jumper jumper) {
+        return jumper.points - this.points;
+        }
+
+    public int getPoints() {
+        return points;
     }
-    
-    
-    
-    
+
+    @Override
+    public String toString() {
+        return name + " (" + points + " points)";
+    }
+
+    public void printJumps() {
+        System.out.print("            jump lengths: ");
+        
+        int i = 0;
+        for (Integer item : jumps) {
+
+            
+            if (i < jumps.size() - 1) {
+                System.out.print(item + "m, ");
+                
+                
+            } else {
+                System.out.print(item + "m");
+            }
+            System.out.print("");
+            i++;
+        }
+    }
+
 }
