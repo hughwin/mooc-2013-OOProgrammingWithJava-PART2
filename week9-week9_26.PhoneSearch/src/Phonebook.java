@@ -55,13 +55,14 @@ public class Phonebook {
         }
     }
 
-    public void searchByPhone(String phoneNumber) {
+    public String searchByPhone(String phoneNumber) {
         for (String s : this.entries.keySet()) {
             ArrayList a = this.entries.get(s);
             if (a.contains(phoneNumber)) {
-                System.out.println(s);
+                return s;
             }
         }
+        return "Not found";
     }
 
     public void information(String name) {
@@ -76,8 +77,11 @@ public class Phonebook {
     }
 
     public void removeDetails(String name) {
-        if (this.entries.equals(name)) {
+        if (this.entries.containsKey(name)){
+        while (this.entries.containsKey(name)) {
             this.entries.remove(name);
+            this.people.remove(name);
+        }
         }
         else {System.out.println("not found");}
     }

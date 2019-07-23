@@ -54,7 +54,7 @@ public class UI {
             if (input.equals("3")) {
                 System.out.println("number: ");
                 String query = this.reader.nextLine();
-                a.searchByPhone(query);
+                System.out.println(a.searchByPhone(query));
             }
             if (input.equals("4")) {
                 System.out.println("whose address: ");
@@ -73,7 +73,7 @@ public class UI {
             if (input.equals("6")) {
                 System.out.println("whose information: ");
                 String name = this.reader.nextLine();
-                a.information(name);
+                a.removeDetails(name);
             }
         }
     }
