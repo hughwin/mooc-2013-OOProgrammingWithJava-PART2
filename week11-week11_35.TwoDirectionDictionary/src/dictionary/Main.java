@@ -1,8 +1,7 @@
-package dungeon;
-
+package dictionary;
 
 public class Main {
     public static void main(String[] args) {
-        new Dungeon(10,10,5,14,true).run();
+        // Test your dictionary here
     }
 }
