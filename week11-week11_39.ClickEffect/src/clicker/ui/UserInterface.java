@@ -46,7 +46,5 @@ public class UserInterface implements Runnable {
         
     }
 
-    public JFrame getFrame() {
-        return frame;
-    }
+
 }
